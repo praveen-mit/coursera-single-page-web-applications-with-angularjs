@@ -1,0 +1,22 @@
+<div class="clearfix"></div>
+
+<table class="table table-responsive table-striped table-bordered" ng-if="foundItems.hasItems()">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Short Name</th>
+      <th>Description</th>
+      <th>Remove Item</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in foundItems.items">
+      <td>{{ item.name }}</td>
+      <td>{{ item.short_name }}</td>
+      <td>{{ item.description }}</td>
+      <td><button ng-click="foundItems.onRemove({index: $index});">Don't want this one!</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-danger" ng-if="foundItems.clicked && !foundItems.hasItems()">Nothing found</div>
