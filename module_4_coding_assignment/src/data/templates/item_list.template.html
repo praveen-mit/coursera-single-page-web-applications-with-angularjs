@@ -1,0 +1,28 @@
+<div class="col-xs-12">
+  <ul>
+    <table class="table table-responsive table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Short Name</th>
+          <th>Description</th>
+          <th>Price (small)</th>
+          <th>Price (large)</th>
+          <th>Small Portion name</th>
+          <th>Large Portion name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in $ctrl.itemList">
+          <td>{{ item.name }}</td>
+          <td>{{ item.short_name }}</td>
+          <td>{{ item.description }}</td>
+          <td>{{ item.price_small }}</td>
+          <td>{{ item.price_large }}</td>
+          <td>{{ item.small_portion_name }}</td>
+          <td>{{ item.large_portion_name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ul>
+</div>
