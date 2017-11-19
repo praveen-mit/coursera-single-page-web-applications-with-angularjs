@@ -1,0 +1,55 @@
+<div id="myinfo" class="container">
+  <div class="col-xs-12" ng-if="!myinfoCtrl.signedUp">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <span>Not Signed Up Yet. <a ui-sref="public.signup">Sign Up Now!</a></span>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12" ng-if="myinfoCtrl.signedUp">
+    <table class="table table-responsive table-bordered">
+      <tbody>
+        <tr>
+          <td>First Name</td>
+          <td>{{ myinfoCtrl.user.firstName }}</td>
+        </tr>
+        <tr>
+          <td>Last Name</td>
+          <td>{{ myinfoCtrl.user.lastName }}</td>
+        </tr>
+        <tr>
+          <td>Email Address</td>
+          <td>{{ myinfoCtrl.user.emailAddress }}</td>
+        </tr>
+        <tr>
+          <td>Phone Number</td>
+          <td>{{ myinfoCtrl.user.phoneNumber }}</td>
+        </tr>
+        <tr>
+          <td>Favourite Menu Number</td>
+          <td>{{ myinfoCtrl.user.favMenu }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-xs-12" ng-if="myinfoCtrl.signedUp">
+    <table class="table table-responsive table-bordered">
+      <thead>
+        <tr>
+          <td>Favourite Menu Name</td>
+          <td>Favourite Menu Description</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ myinfoCtrl.favMenu.name }}</td>
+          <td>{{ myinfoCtrl.favMenu.description }}</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-center"><img class="img-responsive" width="500" height="350" ng-src="https://www.davidchuschinabistro.com/images/{{ myinfoCtrl.user.favMenu }}.jpg" alt="{{ myinfoCtrl.favMenu.name }}" src="https://www.davidchuschinabistro.com/images/{{ myinfoCtrl.user.favMenu }}.jpg"/></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
